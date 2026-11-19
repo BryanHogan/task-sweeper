@@ -4,11 +4,17 @@ Obsidian plugin that moves completed tasks to a `## Done` section at the bottom 
 
 I keep my to-do lists inside my notes, but finished tasks pile up and get in the way. I don't want to delete them, it's nice to see what got done and when. So open tasks stay at the top, finished ones go to the bottom.
 
-<!-- Screenshot: hero.png — a real note in Obsidian (reading or live preview, default theme) with a few open tasks at the top and a ## Done section with dated tasks at the bottom -->
-
 ## Example
 
 Before:
+
+![Note with completed and open tasks mixed under several headings](assets/Task-Sweeper-Before.png)
+
+After:
+
+![Same note with open tasks under their headings and completed tasks, dated, under Done at the bottom](assets/Task-Sweeper-After.png)
+
+In Markdown:
 
 ```markdown
 ## Groceries
@@ -19,7 +25,7 @@ Before:
 - [x] Rice
 ```
 
-After:
+becomes:
 
 ```markdown
 ## Groceries
@@ -34,8 +40,6 @@ After:
 ```
 
 Everything stays plain Markdown, so your notes work without the plugin.
-
-<!-- Screenshot: auto-sweep.gif — short GIF of checking off a task in a real note and watching it move into ## Done -->
 
 ## Lightweight
 
@@ -56,7 +60,7 @@ Each plugin adds complexity, risk and loading time, so I kept this one minimal.
 - **Scope**: Run everywhere, or only in selected files and folders.
 - **Add current file to scope**: Command to add the current note to the selected files.
 
-<!-- Screenshot: command-palette.png — command palette filtered to "Task Sweeper" showing both commands -->
+![Command palette showing both Task Sweeper commands](assets/Task-Sweeper-Commands.png)
 
 ## How it works
 
@@ -73,12 +77,12 @@ Anything else you've written under `## Done` stays.
 
 ## Settings
 
-<!-- Screenshot: settings.png — the Task Sweeper settings tab with Active scope set to "Selected files and folders" and an example path or two filled in -->
-
 - **Auto sweep completed tasks**: On or off.
 - **Active scope**: `Global` or `Selected files and folders`.
 - **Selected files**: One vault-relative Markdown file path per line.
 - **Selected folders**: One vault-relative folder path per line. Includes everything inside.
+
+![Task Sweeper settings tab](assets/Task-Sweeper-Settings.png)
 
 ## Good to know
 
