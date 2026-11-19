@@ -6,13 +6,16 @@ I keep my to-do lists inside my notes, but finished tasks pile up and get in the
 
 ## Example
 
-Before:
-
-![Note with completed and open tasks mixed under several headings](assets/Task-Sweeper-Before.png)
-
-After:
-
-![Same note with open tasks under their headings and completed tasks, dated, under Done at the bottom](assets/Task-Sweeper-After.png)
+<table>
+  <tr>
+    <th>Before</th>
+    <th>After</th>
+  </tr>
+  <tr>
+    <td><a href="assets/Task-Sweeper-Before.png"><img src="assets/Task-Sweeper-Before-Small.png" alt="Note with completed and open tasks mixed under several headings"></a></td>
+    <td><a href="assets/Task-Sweeper-After.png"><img src="assets/Task-Sweeper-After-Small.png" alt="Same note with open tasks under their headings and completed tasks, dated, under Done at the bottom"></a></td>
+  </tr>
+</table>
 
 In Markdown:
 
@@ -41,22 +44,10 @@ becomes:
 
 Everything stays plain Markdown, so your notes work without the plugin.
 
-## Lightweight
-
-Each plugin adds complexity, risk and loading time, so I kept this one minimal.
-
-- About 10 KB (4 KB gzipped), ~900 lines of TypeScript.
-- No dependencies.
-- Offline: no network requests, no telemetry.
-- On load it only reads settings and registers commands. No vault scans, file watchers or timers.
-- Only touches the current note.
-- Auto sweep runs only when you check off a task, not on every keystroke.
-- Works on desktop and mobile, Obsidian 1.4.0+.
-
 ## Features
 
 - **Sweep completed tasks to bottom of note**: Command to sweep the current note.
-- **Auto sweep**: Sweeps right after you check off a task. Turn it on in settings.
+- **Auto sweep**: Sweeps right after you check off a task. Off by default, turn it on in settings.
 - **Scope**: Run everywhere, or only in selected files and folders.
 - **Add current file to scope**: Command to add the current note to the selected files.
 
@@ -75,10 +66,22 @@ Anything else you've written under `## Done` stays.
 - A completed parent moves with all its sub-tasks, finished or not.
 - A completed sub-task under an open parent stays put.
 
+## Lightweight
+
+Each plugin adds complexity, risk and loading time, so I kept this one minimal.
+
+- About 10 KB (4 KB gzipped), ~900 lines of TypeScript.
+- No dependencies.
+- Offline: no network requests, no telemetry.
+- On load it only reads settings and registers commands. No vault scans, file watchers or timers.
+- Only touches the current note.
+- Auto sweep runs only when you check off a task, not on every keystroke.
+- Works on desktop and mobile, Obsidian 1.4.0+.
+
 ## Settings
 
-- **Auto sweep completed tasks**: On or off.
-- **Active scope**: `Global` or `Selected files and folders`.
+- **Auto sweep completed tasks**: Off by default.
+- **Active scope**: `Global` (default) or `Selected files and folders`.
 - **Selected files**: One vault-relative Markdown file path per line.
 - **Selected folders**: One vault-relative folder path per line. Includes everything inside.
 
@@ -86,6 +89,9 @@ Anything else you've written under `## Done` stays.
 
 ## Good to know
 
+- Only `[x]` and `[X]` count as completed. Other statuses like `[-]` or `[/]` stay, and so do numbered tasks like `1. [x]`.
+- Only `(YYYY-MM-DD)` dates are recognized. A task already dated by another plugin, like the Tasks plugin's `✅ 2026-11-19`, gets a second date.
+- Block IDs like `^abc123` stay at the end of the line, after the date, so links to the task keep working.
 - The managed section is the last `## Done` heading with no `#` or `##` heading after it. A `## Done` followed by other sections is left alone and a new one gets created at the bottom.
 - Tasks in fenced code blocks and frontmatter are never swept.
 - Sweeps pause while a note has an unclosed fenced code block.
@@ -103,31 +109,12 @@ Once Task Sweeper is in the community catalog:
 
 ### Manual
 
-1. Download `manifest.json` and `main.js` from the latest release.
+1. Download `manifest.json` and `main.js` from the [latest release](https://github.com/BryanHogan/task-sweeper/releases/latest).
 2. Put them in `<Vault>/.obsidian/plugins/task-sweeper/`.
 3. Reload Obsidian and enable **Task Sweeper** under **Settings → Community plugins**.
-
-## Development
-
-Requires Node.js 22.13+ and npm.
-
-```bash
-npm install
-npm run dev      # Watch build
-npm run build    # Production build
-npm run lint
-npm test
-```
-
-## Releasing
-
-1. Set the version and minimum Obsidian version in `manifest.json` and `versions.json`.
-2. Run `npm run build`.
-3. Create a GitHub release tagged with the exact version, no leading `v`.
-4. Attach `manifest.json` and `main.js`.
 
 ## Feedback
 
 Bugs or ideas: [open an issue](https://github.com/BryanHogan/task-sweeper/issues).
 
-Made by [Bryan Hogan](https://bryanhogan.com).
+Made by [Bryan Hogan](https://bryanhogan.com). Licensed under [0BSD](LICENSE).
