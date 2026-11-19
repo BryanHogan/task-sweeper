@@ -1,0 +1,37 @@
+{
+	"name": "task-sweeper",
+	"version": "1.1.0",
+	"description": "Obsidian plugin to move completed top-level tasks into a managed Done section.",
+	"main": "main.js",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"lint": "eslint .",
+		"test": "node --test tests/taskSweeper.test.mjs"
+	},
+	"keywords": [],
+	"homepage": "https://github.com/BryanHogan/task-sweeper",
+	"bugs": {
+		"url": "https://github.com/BryanHogan/task-sweeper/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BryanHogan/task-sweeper.git"
+	},
+	"license": "0-BSD",
+	"devDependencies": {
+		"@codemirror/state": "^6.5.0",
+		"@codemirror/view": "^6.38.6",
+		"@types/node": "^16.11.6",
+		"esbuild": "0.25.5",
+		"eslint": "^9.39.4",
+		"eslint-plugin-obsidianmd": "^0.6.0",
+		"obsidian": "^1.14.4",
+		"tslib": "2.4.0",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.73.0"
+	}
+}
