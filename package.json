@@ -1,6 +1,6 @@
 {
 	"name": "task-sweeper",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Obsidian plugin to move completed top-level tasks into a managed Done section.",
 	"main": "main.js",
 	"type": "module",

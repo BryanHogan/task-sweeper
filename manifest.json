@@ -1,7 +1,7 @@
 {
 	"id": "task-sweeper",
 	"name": "Task Sweeper",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"minAppVersion": "1.4.0",
 	"description": "Move completed top-level tasks to a managed Done section at the bottom of your note.",
 	"author": "BryanHogan",
