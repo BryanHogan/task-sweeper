@@ -4,6 +4,8 @@ Obsidian plugin that moves completed tasks to a `## Done` section at the bottom 
 
 I keep my to-do lists inside my notes, but finished tasks pile up and get in the way. I don't want to delete them, it's nice to see what got done and when. So open tasks stay at the top, finished ones go to the bottom.
 
+By default it works in every note. To limit it, set **Active scope** to **Selected files and folders**, then run **Add current file to scope** in each note you want swept, or list folders in settings.
+
 ## Example
 
 <table>
